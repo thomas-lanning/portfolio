@@ -2,17 +2,9 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route('/')
-def home():
-    return render_template('index.html')
-
-@app.route('/projects')
+@app.route('/api/projects')
 def projects():
-    return render_template('projects.html')
-
-@app.route('/cv')
-def cv():
-    return render_template('cv.html')
+    return {"projects": ["Project 1", "Project 2", "Project 3"]}
 
 if __name__ == '__main__':
     app.run(debug=True)
