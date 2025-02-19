@@ -1,6 +1,26 @@
 [
+    
+    
     {
-        "name": "Hangman AI",
+        "description": "I used to live in DC, so I created code which would automatically get me a picture from a satellite of the current day. I modified it a bit here to be able to select a day for it.",
+        "name": "DC Satellite",
+        "link": "https://github.com/thomas-lanning/DC_satellite",
+        "image": "data/images/DC.jpeg"
+    },
+    {
+        "description": "Electronic Structure Theory analysis using Quantum Espresso and Supercomputer. \nIt was written in a Bash script with parralellized computations, and analysis and plotting was done in Python.",
+        "name": "Perovskite Analysis using Supercomputer",
+        "link": "https://github.com/thomas-lanning/EST",
+        "image": "data/images/perovskite.png"
+    },
+    {
+        "description": "The CERN_ThomasLanning folder has all my work in it. It is a C++ simulation of particle collider experiments and a Jupyter notebook analysis. \nThe Analysis.ipynb is where the story starts. You will probably want to read it through to understand my detector structure since it is a bit unconventional...\nThere are two data folders: data_energy_range and Improved_data\nthe first one is for the not-improved analysis\nthe second one is for the improved analysis -There are some pictures in the folder: I use these in the jupyter notebook so need them there.\nThere is also some data in the main folder: that is just some exploratory data I use at the start of my notebook\nFinally: The folder Project_improved contains my improved version of the simulation The folder Project_not_improved is my initial version. - I edited both of the src code after compiling it last, but only with comments so when you rerun the code, it might recompile for that reason.\n\nEnjoy :)",
+        "name": "Particle Collider Simulation and ML Analysis",
+        "link": "https://github.com/thomas-lanning/CERN",
+        "image": "data/images/CERN.png"        
+    },
+    {
+        "name": "Hangman RL/GPT Hybrid Model",
         "description": "This code implements a hybrid model to play Hangman using both Reinforcement Learning (RL) and a GPT-based language model (LLM). \nThe HangmanEnv class sets up the game environment, taking a word and initializing lives, guessed letters, and a word state with underscores for unguessed letters. \nThe 'step()' function updates the game state based on the guessed letter, reducing lives if the letter is guessed incorrectly or updating the word state if the letter is in the word. \nThe DQN model predicts the next letter based on the current game state, processing input through four layers with dropout and layer normalization. \nThe HangmanLLM class uses a GPT-2 architecture to predict the next letter from a partially completed word. If GPT cannot predict a letter, it falls back to the RL model. \nThe HybridHangmanModel combines both models, switching between the RL model (when many letters are missing) and the GPT model (when fewer letters are missing). \nThe models are loaded from saved checkpoints or initialized with random weights. \nThe model's performance is tested on both predefined words and 100,000 randomly selected words from a dictionary, with the win rate evaluated by the number of games won out of 100,000.",
         "link": "https://github.com/thomas-lanning/Hangman_AI",
         "image": "data/images/hangman_ai.png"
@@ -10,17 +30,5 @@
         "description": "I bought codenames duet but the tile cards were missing so I created a Flask app which generates tiles for me to still be able to play the game!",
         "link": "https://github.com/thomas-lanning/codenames_duet",
         "image": "data/images/codenames.jpeg"
-    },
-    {
-        "description": "I used to live in DC, so I created code which would automatically get me a picture from a satellite of the current day. I modified it a bit here to be able to select a day for it.",
-        "name": "DC Satellite",
-        "link": "https://github.com/thomas-lanning/DC_satellite",
-        "image": "data/images/DC.jpeg"
-    },
-    {
-        "description": "The CERN_ThomasLanning folder has all my work in it. It is a C++ simulation of particle collider experiments and a Jupyter notebook analysis. \nThe Analysis.ipynb is where the story starts. You will probably want to read it through to understand my detector structure since it is a bit unconventional...\nThere are two data folders: data_energy_range and Improved_data\nthe first one is for the not-improved analysis\nthe second one is for the improved analysis -There are some pictures in the folder: I use these in the jupyter notebook so need them there.\nThere is also some data in the main folder: that is just some exploratory data I use at the start of my notebook\nFinally: The folder Project_improved contains my improved version of the simulation The folder Project_not_improved is my initial version. - I edited both of the src code after compiling it last, but only with comments so when you rerun the code, it might recompile for that reason.\n\nEnjoy :)",
-        "name": "Particle Collider Simulation and ML Analysis",
-        "link": "https://github.com/thomas-lanning/CERN",
-        "image": "data/images/CERN.png"        
     }
 ]
