@@ -14,4 +14,15 @@
         <a href="cv.html">CV</a>
     </nav>
 </body>
+<script>
+fetch('https://your-app-name.onrender.com/api/projects')
+    .then(response => response.json())
+    .then(data => {
+        document.body.innerHTML += "<h2>My Projects</h2>";
+        data.projects.forEach(p => {
+            document.body.innerHTML += `<p>${p}</p>`;
+        });
+    });
+</script>
+
 </html>
