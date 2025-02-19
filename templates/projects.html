@@ -1,43 +1,150 @@
 {% extends "base.html" %}
 
-{% block title %}Projects - Portfolio{% endblock %}
+{% block title %}Projects - Thomas Lanning{% endblock %}
 
 {% block content %}
-    <h1>My Projects</h1>
-    <ul>
-        {% for project in projects %}
-            <li class="project-block">
-                <h2>{{ project.name }}</h2>
-                <img src="{{ project.image }}" alt="{{ project.name }} image" class="project-image">
-                <p><a href="{{ project.link }}" target="_blank">View Project</a></p>
-                
-                <!-- Collapsible description -->
-                <div class="collapsible-container">
-                    <p class="collapsible-content">{{ project.description | replace('\n', '<br>') | safe }}</p>
-                    <button class="collapsible">Press for project description</button>
-                </div>
-            </li>
-        {% endfor %}
-    </ul>
+<section class="projects-hero">
+  <div class="container">
+    <h1 class="display-4 text-center mb-5">My Projects</h1>
+    <p class="lead text-center mb-5">Here are some of the projects I've worked on. Each represents different skills and technologies I've mastered.</p>
+  </div>
+</section>
 
-    <script>
-        // Get all collapsible buttons
-        const collapsibles = document.querySelectorAll('.collapsible');
+<section class="projects-gallery">
+  <div class="container">
+    <div class="row g-4">
+      {% for project in projects %}
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+        <div class="card project-card h-100">
+          <div class="card-img-container">
+            <img src="{{ project.image }}" class="card-img-top" alt="{{ project.name }}">
+            <div class="card-img-overlay d-flex flex-column justify-content-end" style="background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%);">
+              <h3 class="card-title text-white">{{ project.name }}</h3>
+              <div class="tags mb-2">
+                {% for tag in project.tags|default([]) %}
+                <span class="badge bg-primary me-1">{{ tag }}</span>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="card-text description-preview">{{ project.description|truncate(120) }}</p>
+            
+            <div class="collapse" id="project-details-{{ loop.index }}">
+              <div class="card-text full-description mb-4">
+                {{ project.description | replace('\n', '<br>') | safe }}
+              </div>
+            </div>
+            
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <div class="btn-group">
+                {% if project.link %}
+                <a href="{{ project.link }}" class="btn btn-primary" target="_blank">View Project</a>
+                {% endif %}
+                {% if project.github_link %}
+                <a href="{{ project.github_link }}" class="btn btn-outline-secondary" target="_blank">
+                  <i class="fab fa-github me-1"></i> GitHub
+                </a>
+                {% endif %}
+              </div>
+              <button class="btn btn-sm btn-link text-muted" type="button" data-bs-toggle="collapse" 
+                      data-bs-target="#project-details-{{ loop.index }}" aria-expanded="false">
+                <span class="show-text">Details</span>
+                <span class="hide-text d-none">Hide</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
 
-        // Loop through all collapsible buttons and add click event
-        collapsibles.forEach(button => {
-            button.addEventListener('click', () => {
-                const content = button.previousElementSibling;
-                
-                // Toggle the visibility of the content
-                if (content.style.display === "block") {
-                    content.style.display = "none";
-                    button.textContent = "Show More";
-                } else {
-                    content.style.display = "block";
-                    button.textContent = "Show Less";
-                }
-            });
-        });
-    </script>
+<script>
+  document.querySelectorAll('[data-bs-toggle="collapse"]').forEach(button => {
+    button.addEventListener('click', () => {
+      const showText = button.querySelector('.show-text');
+      const hideText = button.querySelector('.hide-text');
+      
+      showText.classList.toggle('d-none');
+      hideText.classList.toggle('d-none');
+    });
+  });
+</script>
+
+<style>
+  .projects-hero {
+    padding: 80px 0 40px;
+    background-color: var(--background, #f8f9fa);
+  }
+  
+  .project-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card-img-container {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .project-card:hover .card-img-container img {
+    transform: scale(1.05);
+  }
+  
+  .card-img-overlay {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .project-card:hover .card-img-overlay {
+    opacity: 1;
+  }
+  
+  .tags .badge {
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
+  
+  .description-preview {
+    color: #6c757d;
+    font-size: 0.95rem;
+  }
+  
+  .full-description {
+    border-top: 1px solid #e9ecef;
+    padding-top: 1rem;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .btn-link {
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.85rem;
+  }
+  
+  @media (max-width: 768px) {
+    .card-img-container {
+      height: 180px;
+    }
+  }
+</style>
 {% endblock %}

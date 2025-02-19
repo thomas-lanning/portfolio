@@ -3,7 +3,73 @@
 {% block title %}Home - Portfolio{% endblock %}
 
 {% block content %}
-    <h1>I am Thomas Lanning, and this is my portfolio.</h1>
-    <p>Welcome to my personal website, where I showcase my projects and experience.</p>
-{% endblock %}
+<section class="hero-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <h1 class="display-4 fw-bold mb-4">Thomas Lanning</h1>
+          <p class="lead mb-5">Web Developer & Software Engineer</p>
+          <a href="/projects" class="btn btn-light btn-lg px-4 me-2">View My Work</a>
+          <a href="/contact" class="btn btn-outline-light btn-lg px-4">Get In Touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="pdf-viewer-container">
+                <h2>My CV</h2>
+                <embed src="{{ url_for('static', filename='files/cv.pdf') }}" type="application/pdf" width="100%" height="600px">
+            </div>
+
+            <h1>I am Thomas Lanning, and this is my portfolio.</h1>
+            <p>Welcome to my personal website, where I showcase my projects and experience.</p>
+        </div>
+        <div class="col-md-4">
+            <div class="how-it-works-box">
+                <p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#howItWorksContent" aria-expanded="false" aria-controls="howItWorksContent">
+                        How My Website Works (Click to Expand)
+                    </button>
+                </p>
+                <div class="collapse" id="howItWorksContent">
+                    <div class="card card-body">
+                        <h2>How My Website Works</h2>
+                        <p>This website is a personal portfolio built using the Flask web framework. It showcases my skills, projects, and provides contact information. The website consists of several pages, including a home page, projects page, about page, and contact page. The project data is loaded from a JSON file, which makes it easy to update and manage.</p>
+
+                        <h3>Code Breakdown</h3>
+                        <ul>
+                            <li><strong>Imports:</strong> I imported <code>Flask</code>, <code>render_template</code>, <code>jsonify</code>, and <code>send_from_directory</code> from the <code>flask</code> module. These are essential for creating the web application, rendering HTML templates, converting Python dictionaries to JSON responses, and serving static files, respectively. I also imported the <code>json</code> module to handle JSON data.</li>
+                            <li><strong>Flask App Initialization:</strong> I initialized the Flask application with <code>app = Flask(__name__)</code>. The <code>__name__</code> argument helps Flask determine the root path of the application.</li>
+                            <li><strong>Helper Function:</strong> I created a helper function <code>load_projects()</code> that reads project data from a JSON file (<code>data/projects.json</code>) and returns it as a Python dictionary. This data is used to dynamically populate the projects page.</li>
+                            <li><strong>Routes:</strong>
+                                <ul>
+                                    <li><code>/</code>: The home route renders the <code>index.html</code> template, which serves as the landing page of the website.</li>
+                                    <li><code>/projects</code>: This route loads project data using the <code>load_projects()</code> function and renders the <code>projects.html</code> template, passing the project data to it.</li>
+                                    <li><code>/about</code>: Renders the <code>about.html</code> template, which contains information about me.</li>
+                                    <li><code>/contact</code>: Renders the <code>contact.html</code> template, providing a way for visitors to contact me.</li>
+                                    <li><code>/data/images/&lt;path:filename&gt;</code>: This route serves static image files from the <code>data/images</code> directory. The <code>&lt;path:filename&gt;</code> part of the URL captures the filename of the image to be served.</li>
+                                </ul>
+                            </li>
+                            <li><strong>App Execution:</strong> The <code>if __name__ == '__main__':</code> block ensures that the Flask application runs only if the script is executed directly. It runs the app in debug mode on port 8080.</li>
+                        </ul>
+
+                        <h3>How It Works</h3>
+                        <p>When a user visits the home page (<code>/</code>), the <code>home</code> function is called, which renders the <code>index.html</code> template. This template is likely formatted using block templates, allowing for consistent styling and structure across different pages.</p>
+                        <p>When a user navigates to the projects page (<code>/projects</code>), the <code>projects</code> function is called. This function loads project data from the JSON file and renders the <code>projects.html</code> template, passing the project data to it. The JSON file (<code>data/projects.json</code>) contains details about each project, such as the title, description, and possibly links to the project.</p>
+                        <p>The about page (<code>/about</code>) and contact page (<code>/contact</code>) are rendered by their respective functions, which simply return the corresponding HTML templates. These templates are also likely formatted using block templates for consistency.</p>
+                        <p>Static images are served from the <code>data/images</code> directory using the <code>custom_static</code> function, which is mapped to the <code>/data/images/&lt;path:filename&gt;</code> route. This allows me to easily include images in my projects and other parts of the website.</p>
+                        <p>This structure allows for easy expansion and maintenance of the website. I can add new routes and templates as needed, and the use of JSON for project data makes it simple to update and manage the content displayed on the projects page. The block templates ensure that the website has a consistent look and feel across all pages.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // No JavaScript needed for basic Bootstrap collapse, but you can add custom JS here if required.
+</script>
+{% endblock %}

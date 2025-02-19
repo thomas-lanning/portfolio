@@ -1,8 +1,4 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 50px;
-}
+
 
 nav ul {
     list-style-type: none;
@@ -67,3 +63,45 @@ nav ul li a {
     margin-bottom: 10px;
     align-items: center;
 }
+/* static/css/style.css */
+:root {
+    --primary: #3a6ea5;
+    --secondary: #004e98;
+    --accent: #ff6b6b;
+    --background: #f9f9f9;
+    --text: #333333;
+  }
+  
+  body {
+    font-family: 'Roboto', 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--background);
+  }
+  
+  .hero-section {
+    padding: 120px 0;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    text-align: center;
+  }
+  
+  .section {
+    padding: 80px 0;
+  }
+  
+  .nav-custom {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project-card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
