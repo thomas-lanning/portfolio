@@ -1,12 +1,14 @@
 [
     {
         "name": "Hangman AI",
-        "description": "A machine learning model that plays Hangman.",
-        "link": "https://github.com/thomaslanning/hangman-ai"
+        "description": "This code implements a hybrid model to play Hangman using both Reinforcement Learning (RL) and a GPT-based language model (LLM). \nThe HangmanEnv class sets up the game environment, taking a word and initializing lives, guessed letters, and a word state with underscores for unguessed letters. \nThe 'step()' function updates the game state based on the guessed letter, reducing lives if the letter is guessed incorrectly or updating the word state if the letter is in the word. \nThe DQN model predicts the next letter based on the current game state, processing input through four layers with dropout and layer normalization. \nThe HangmanLLM class uses a GPT-2 architecture to predict the next letter from a partially completed word. If GPT cannot predict a letter, it falls back to the RL model. \nThe HybridHangmanModel combines both models, switching between the RL model (when many letters are missing) and the GPT model (when fewer letters are missing). \nThe models are loaded from saved checkpoints or initialized with random weights. \nThe model's performance is tested on both predefined words and 100,000 randomly selected words from a dictionary, with the win rate evaluated by the number of games won out of 100,000.",
+        "link": "https://github.com/thomas-lanning/Hangman_AI",
+        "image": "data/images/hangman_ai.png"
     },
     {
-        "name": "Retail Data Analytics",
-        "description": "A data science project analyzing purchase behavior.",
-        "link": "https://github.com/thomaslanning/retail-analytics"
+        "name": "Codenames Duet Tile Generator",
+        "description": "I bought codenames duet but the tile cards were missing so I created a Flask app which generates tiles for me to still be able to play the game!",
+        "link": "https://github.com/thomas-lanning/codenames_duet",
+        "image": "images/codenames_duet.png"
     }
 ]
