@@ -55,10 +55,13 @@ nav ul li a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    max-width: 600px;  /* Add this line to limit the width of the border */
+    margin-left: auto;  /* Add this line to center the border horizontally */
+    margin-right: auto;  /* Add this line to center the border horizontally */
 }
 
 .project-image {
-    max-width: 10%;
+    max-width: 30%;
     height: auto;
     display: block;
     margin-bottom: 10px;

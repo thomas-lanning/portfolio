@@ -10,5 +10,11 @@
         "description": "I bought codenames duet but the tile cards were missing so I created a Flask app which generates tiles for me to still be able to play the game!",
         "link": "https://github.com/thomas-lanning/codenames_duet",
         "image": "data/images/codenames.jpeg"
+    },
+    {
+        "description": "I used to live in DC, so I created code which would automatically get me a picture from a satellite of the current day. I modified it a bit here to be able to select a day for it.",
+        "name": "DC Satellite",
+        "link": "https://github.com/thomas-lanning/DC_satellite",
+        "image": "data/images/DC.png"
     }
 ]
