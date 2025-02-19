@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Hangman AI",
+        "description": "A machine learning model that plays Hangman.",
+        "link": "https://github.com/thomaslanning/hangman-ai"
+    },
+    {
+        "name": "Retail Data Analytics",
+        "description": "A data science project analyzing purchase behavior.",
+        "link": "https://github.com/thomaslanning/retail-analytics"
+    }
+]
