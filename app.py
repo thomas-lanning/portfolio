@@ -28,6 +28,7 @@ def contact():
 @app.route('/data/images/<path:filename>')
 def custom_static(filename):
     return send_from_directory('data/images', filename)
+    
 
 if __name__ == '__main__':
     app.run(debug=True, port='8080')
