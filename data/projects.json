@@ -9,6 +9,6 @@
         "name": "Codenames Duet Tile Generator",
         "description": "I bought codenames duet but the tile cards were missing so I created a Flask app which generates tiles for me to still be able to play the game!",
         "link": "https://github.com/thomas-lanning/codenames_duet",
-        "image": "images/codenames_duet.png"
+        "image": "data/images/codenames.jpeg"
     }
 ]

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, send_from_directory
 import json
 
 app = Flask(__name__)
@@ -24,6 +24,10 @@ def about():
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
+
+@app.route('/data/images/<path:filename>')
+def custom_static(filename):
+    return send_from_directory('data/images', filename)
 
 if __name__ == '__main__':
     app.run(debug=True, port='8080')
