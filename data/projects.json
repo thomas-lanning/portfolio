@@ -1,8 +1,8 @@
 [
     
     {
-        "description": "I had no wifi, and wanted to work on my python and financial modelling skills. So I worked with what I got. If you're a quant, the earlier versions of this probably confuse you. Hopefully, when I get to it, later versions of the model will impress you. Hire me!",
-        "name": "Doing Finance",
+        "description": "I want to get into data anlysis in the financial markets. There is a lot of rich pattern analysis I can analyze and lots of creative projects I can think to work on. I put every project in a separate chapter. At the start, I had no wifi, and wanted to work on my python and financial modelling skills, so the first chapter is terrible. I worked with what I got. If you're a quant, the earlier versions of this probably confuse you. Hopefully, when I get to it, later versions of the model will impress you. Hire me!",
+        "name": "The Book of Finance",
         "link": "https://github.com/thomas-lanning/finance-practice",
         "image": "data/images/finance_project.png"
     },
